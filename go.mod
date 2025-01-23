@@ -1,6 +1,6 @@
 module github.com/bdemeo12/leet-code
 
-go 1.23.5
+go 1.23
 
 require github.com/stretchr/testify v1.10.0
 
