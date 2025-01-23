@@ -18,28 +18,36 @@ import (
 // Question: is it faster/better to remove all 0s from the arrays before we start ?
 // ************************
 
+// func mergeSort(nums1 []int, m int, nums2 []int, n int) []int {
+// 	// empty array check
+// 	if len(nums1) == 0 || len(nums2) == 0 {
+// 		nums1 = append(nums1, nums2...)
+// 		return nums1
+// 	}
+
+// 	nums1 = divideAndConquer(nums1)
+// 	nums2 = divideAndConquer(nums2)
+
+// 	nums1 = append(nums1, nums2...)
+// 	nums1 = divideAndConquer(nums1)
+// 	// trim
+// 	arrayLen := m + n
+// 	nums1 = nums1[len(nums1)-arrayLen:]
+
+// 	return nums1
+
+// }
+
 func mergeSort(nums1 []int, m int, nums2 []int, n int) []int {
-	// If there is just 1 item in each array
-	if len(nums1) <= 1 && len(nums2) <= 1 {
-		if nums1[0] < nums2[0] { // sort in non decreasing order aka increasing order
-			nums1 = append(nums1, nums2[0])
-		} else {
-			nums1 = append([]int{nums2[0]}, nums1...) // is this the best way ?
-		}
-
-		// confirm the array len is correct before we finish
-		if len(nums1) != (m + n) {
-			nums1 = nums1[:m+n]
-		}
-
+	// empty array check
+	if len(nums1) == 0 || len(nums2) == 0 {
+		nums1 = append(nums1, nums2...)
 		return nums1
 	}
 
-	nums1 = divideAndConquer(nums1)
-	nums2 = divideAndConquer(nums2)
+	// lets deal with one array
+	nums1 = divideAndConquer(append(nums1, nums2...))
 
-	nums1 = append(nums1, nums2...)
-	nums1 = divideAndConquer(nums1)
 	// trim
 	arrayLen := m + n
 	nums1 = nums1[len(nums1)-arrayLen:]
@@ -80,17 +88,17 @@ func merge(left, right []int) []int {
 	result = append(result, left[i:]...)
 	result = append(result, right[j:]...)
 
-	fmt.Println("final result:")
-
 	return result
 }
 
 func main() {
-	nums1 := []int{4, 3, 5}
-	m := 3
+	//nums1 := []int{1, 2, 3, 0, 0, 0}
+	var nums1 []int
+	m := 0
 	fmt.Println("Nums1:", nums1, "m:", m)
 
-	nums2 := []int{6, 0}
+	nums2 := []int{1}
+	//var nums2 []int
 	n := 1
 	fmt.Println("Nums2:", nums2, "n:", n)
 
