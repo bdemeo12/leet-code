@@ -92,13 +92,12 @@ func merge(left, right []int) []int {
 }
 
 func main() {
-	//nums1 := []int{1, 2, 3, 0, 0, 0}
+
 	var nums1 []int
 	m := 0
 	fmt.Println("Nums1:", nums1, "m:", m)
 
 	nums2 := []int{1}
-	//var nums2 []int
 	n := 1
 	fmt.Println("Nums2:", nums2, "n:", n)
 
