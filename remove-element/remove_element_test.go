@@ -6,16 +6,16 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
-func TestMergeSort(t *testing.T) {
+func TestRemoveElement(t *testing.T) {
 
-	type mergeSortParams struct {
+	type removeElementParams struct {
 		nums []int
 		val  int
 
 		expectedResult int
 	}
 
-	cases := []*mergeSortParams{
+	cases := []*removeElementParams{
 		{
 			nums:           []int{3, 2, 2, 3},
 			val:            3,
