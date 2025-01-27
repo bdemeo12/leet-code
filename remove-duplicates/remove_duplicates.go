@@ -11,25 +11,46 @@ import "fmt"
 // present in nums initially. The remaining elements of nums are not important as well as the size of nums.
 // Return k.
 
+// using 1 array
 func removeDuplicates(nums []int) int {
-	uniqueNums := make(map[int]int)
-
-	for i, n := range nums {
-		// If we dont have it in the map, set it
-		if _, ok := uniqueNums[n]; !ok {
-			uniqueNums[n] = n
-			continue
-		}
-
-		// else, we have it already, lets remove it from nums
-		nums = append(nums[:i], nums[i+1:]...)
+	if len(nums) == 0 {
+		return 0
 	}
 
-	fmt.Println("nums:", nums)
-	return len(nums)
+	// k is the position to place the next unique element
+	k := 1
+
+	for i := 1; i < len(nums); i++ {
+		// Compare the current element with the previous one
+		if nums[i] != nums[i-1] {
+			nums[k] = nums[i] // Move the unique element to the front
+			k++
+		}
+	}
+
+	fmt.Println(nums[:k])
+	return k
+
 }
 
+// using 2 arrays
+// func removeDuplicates(nums []int) int {
+// 	uniqueNums := make(map[int]int)
+
+// 	for _, n := range nums {
+// 		uniqueNums[n] = n
+// 	}
+
+// 	newNums := []int{}
+// 	for k, _ := range uniqueNums {
+// 		newNums = append(newNums, k)
+// 	}
+
+// 	fmt.Println("nums:", newNums)
+// 	return len(newNums)
+// }
+
 func main() {
-	nums := []int{3, 1, 1, 4, 2, 4}
+	nums := []int{1, 0, 523, 5, 0, 2, 2}
 	_ = removeDuplicates(nums)
 }
