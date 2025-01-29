@@ -39,3 +39,8 @@ func removeDuplicatesii(nums []int) int {
 	fmt.Println(nums[:k])
 	return k
 }
+
+func main() {
+	nums := []int{1, 1, 1, 2, 2, 3}
+	fmt.Println(removeDuplicatesii(nums))
+}
