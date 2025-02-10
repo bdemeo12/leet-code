@@ -44,25 +44,3 @@ func compress(chars []byte) int {
 	}
 	return len(s)
 }
-
-// for i := 0; i < len(chars)-1; i++ {
-// 	next := chars[i+1]
-// 	if string(chars[i]) == string(next) {
-// 		counter++
-
-// 		if string(next) != string(chars[len(chars)]) {
-// 			continue
-// 		}
-// 	}
-
-// 	// if they are not equal we can append to s
-// 	s = s + string(chars[i])
-// 	if counter > 1 {
-// 		s = s + strconv.Itoa(counter)
-// 	}
-// 	// reset counter
-// 	counter = 1
-// }
-
-// return len(s)
-// }
