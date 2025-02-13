@@ -24,3 +24,11 @@ func mergeAlternately(word1 string, word2 string) string {
 
 	return mergedString
 }
+
+func main() {
+	// Example usage
+	word1 := "abc"
+	word2 := "defgh"
+	result := mergeAlternately(word1, word2)
+	println(result) // Output: "adbcefgh"
+}
