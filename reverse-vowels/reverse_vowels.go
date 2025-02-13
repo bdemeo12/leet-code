@@ -31,3 +31,8 @@ func reverseVowels(s string) string {
 	}
 	return string(runes)
 }
+
+func main() {
+	s := "hello"
+	println(reverseVowels(s))
+}

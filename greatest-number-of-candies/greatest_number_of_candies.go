@@ -40,3 +40,13 @@ func mostCandies(arr []int) int {
 
 	return tmp[0]
 }
+
+func main() {
+	candies := []int{2, 3, 5, 1, 3}
+	extraCandies := 3
+
+	result := kidsWithCandies(candies, extraCandies)
+	for _, r := range result {
+		println(r)
+	}
+}

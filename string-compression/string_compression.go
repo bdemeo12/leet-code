@@ -44,3 +44,15 @@ func compress(chars []byte) int {
 	}
 	return len(s)
 }
+
+func main() {
+	chars := []byte{'a', 'a', 'b', 'b', 'c', 'c', 'c'}
+
+	result := compress(chars)
+	println(result)
+
+	// print the compressed array
+	for i := 0; i < result; i++ {
+		print(string(chars[i]))
+	}
+}

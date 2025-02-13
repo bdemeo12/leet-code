@@ -29,3 +29,12 @@ func moveZeros(nums []int) []int {
 
 	return nums
 }
+
+func main() {
+	nums := []int{0, 1, 0, 3, 12}
+
+	result := moveZeros(nums)
+	for _, r := range result {
+		println(r)
+	}
+}

@@ -27,3 +27,11 @@ func canPlaceFlowers(flowerbed []int, n int) bool {
 
 	return n == 0
 }
+
+func main() {
+	flowerbed := []int{1, 0, 0, 0, 1}
+	n := 1
+
+	result := canPlaceFlowers(flowerbed, n)
+	println(result)
+}
