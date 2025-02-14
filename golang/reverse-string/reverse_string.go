@@ -16,3 +16,9 @@ func reverseString(s string) string {
 
 	return string(sArr)
 }
+
+func main() {
+	s := "hello"
+	result := reverseString(s)
+	println(result) // Output: "olleh"
+}

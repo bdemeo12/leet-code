@@ -14,3 +14,14 @@ func largestValue(m map[string]int) int {
 
 	return largest
 }
+
+func main() {
+	m := map[string]int{
+		"one":   1,
+		"two":   2,
+		"three": 3,
+	}
+
+	result := largestValue(m)
+	println(result) // Output: 3
+}

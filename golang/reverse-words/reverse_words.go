@@ -32,6 +32,12 @@ func reverseWords(s string) string {
 	return ""
 }
 
+func main() {
+	s := "  hello world  "
+	result := reverseWords(s)
+	println(result) // Output: "world hello
+}
+
 // func reverseWords(s string) string {
 // 	var output string
 // 	runes := []rune(s)

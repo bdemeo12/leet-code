@@ -15,6 +15,13 @@ func longestSubstring(s string, k int) int {
 	return 0
 }
 
+func main() {
+	s := "aaabb"
+	k := 3
+	result := longestSubstring(s, k)
+	println(result) // Output: 3
+}
+
 //sArr := []rune(s)
 // counter := 1
 // var tracker = make(map[rune]int)

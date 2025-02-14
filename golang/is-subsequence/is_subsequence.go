@@ -33,6 +33,13 @@ func isSubsequence(s string, t string) bool {
 	return false
 }
 
+func main() {
+	s := "abc"
+	t := "ahbgdc"
+	result := isSubsequence(s, t)
+	println(result) // Output: true
+}
+
 // // convert strings to arrs
 // sArr := []rune(s)
 // tArr := []rune(t)
