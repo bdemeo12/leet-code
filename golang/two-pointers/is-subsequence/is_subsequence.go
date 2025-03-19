@@ -1,5 +1,7 @@
 package main
 
+import "strings"
+
 // Given two strings s and t, return true if s is a subsequence of t, or false otherwise.
 
 // A subsequence of a string is a new string that is formed from the original string by deleting some
@@ -8,22 +10,21 @@ package main
 
 func isSubsequence(s string, t string) bool {
 
-	if s == "" {
+	if s == t || s == "" {
 		return true
 	}
 
-	// convert strings to arrs
-	sArr := []rune(s)
-	tArr := []rune(t)
+	sArr := strings.Split(s, "")
+	tArr := strings.Split(t, "")
+
 	i, j := 0, 0
 
-	for i < len(sArr) && j < len(tArr) {
-		if string(sArr[i]) == string(tArr[j]) {
+	for j < len(tArr) {
+		if sArr[i] == tArr[j] {
 			i++
-			j++
-		} else {
-			j++
 		}
+
+		j++
 
 		if i == len(sArr) {
 			return true
@@ -56,3 +57,30 @@ func main() {
 // }
 
 // return count == len(sArr)
+
+// func isSubsequence(s string, t string) bool {
+
+// 	if s == "" {
+// 		return true
+// 	}
+
+// 	// convert strings to arrs
+// 	sArr := []rune(s)
+// 	tArr := []rune(t)
+// 	i, j := 0, 0
+
+// 	for i < len(sArr) && j < len(tArr) {
+// 		if string(sArr[i]) == string(tArr[j]) {
+// 			i++
+// 			j++
+// 		} else {
+// 			j++
+// 		}
+
+// 		if i == len(sArr) {
+// 			return true
+// 		}
+// 	}
+
+// 	return false
+// }
