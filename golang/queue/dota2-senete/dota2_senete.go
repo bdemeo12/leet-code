@@ -53,7 +53,7 @@ func predictPartyVictory(senate string) string {
 		if s == "R" {
 			if bannedR == 0 {
 				queue = append(queue, s)
-				bannedR++
+				bannedD++
 			} else {
 				rCount--
 				bannedR--
@@ -62,7 +62,7 @@ func predictPartyVictory(senate string) string {
 		} else if s == "D" {
 			if bannedD == 0 {
 				queue = append(queue, s)
-				bannedD++
+				bannedR++
 			} else {
 				bannedD--
 				dCount--
