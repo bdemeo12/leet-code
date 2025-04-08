@@ -42,9 +42,3 @@ func main() {
 	fmt.Println(canPartition(nums))
 
 }
-
-// target is 12,
-// 12 = false || 12-1 = 11 false
-// 11 = false || 11 -1 = 10 = false
-// ...
-// 1 = false || 1-1 = true
