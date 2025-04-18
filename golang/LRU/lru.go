@@ -122,10 +122,16 @@ func (this *LRUCache) deleteNode(node *doubleLinkedList) {
 }
 
 func (this *LRUCache) moveNodeToLastPlace(node *doubleLinkedList) {
-	// nil -> left -> other node-> other node->  last place -> right -> nil
+	// If the node is already in the list, detach it
+	if node.prev != nil && node.next != nil {
+		node.prev.next = node.next
+		node.next.prev = node.prev
+	}
 
-	this.rNode.next = node
-	node.prev = this.rNode.prev
+	// Insert the node just before rNode
+	last := this.rNode.prev
+	last.next = node
+	node.prev = last
 	node.next = this.rNode
 	this.rNode.prev = node
 }
